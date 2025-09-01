@@ -23,8 +23,6 @@ def http_client():
         cafile=settings.ca_path
     )
     auth = BasicAuth(settings.hypercore_username, settings.hypercore_password)
-    # context.load_cert_chain(certfile=settings.tls_cert_path, keyfile=settings.tls_key_path)
-    # return Client(verify=context, timeout=10.0)
     return Client(verify=context, auth=auth, timeout=10.0)
 
 def main():
